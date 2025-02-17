@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generate OTP</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      #otpDisplay {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="generateOTP()">Generate OTP</button>
+    <div id="otpDisplay"></div>
+
+    <script>
+      function generateOTP(length = 4) {
+        let otp = "";
+        for (let i = 0; i < length; i++) {
+          otp += Math.floor(Math.random() * 10);
+        }
+        document.getElementById("otpDisplay").innerText = `Your OTP is: ${otp}`;
+      }
+    </script>
+  </body>
+</html>
